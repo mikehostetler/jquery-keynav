@@ -2,4 +2,5 @@
 
 ## Demo
 
-http://mike-hostetler.com/jquery-keyboard-navigation-plugin
+<a href="http://mike-hostetler.com/jquery-keyboard-navigation-plugin">http://mike-hostetler.com/jquery-keyboard-navigation-plugin</a>
+
