@@ -70,7 +70,7 @@
 	  e.onmouseover = function (e) { $.keynav.setActive(this); };
 	  kn.el.push(e);
   }
-  $.keynav.setActive = function(e) {
+  $.keynav.setActive = function(e, fromKeyb) {
 	  var kn = $.keynav;
 	  var cur = $.keynav.getCurrent();
 	  $(cur).trigger('blur');
@@ -80,6 +80,7 @@
 	  }
     $(e).removeClass(e.offClass).addClass(e.onClass);
 	  $(e).trigger('focus');
+	  if (fromKeyb) $(e).trigger('keynav:focus');
 	  kn.currentEl = e;
   }
   $.keynav.getCurrent = function () {
@@ -118,7 +119,7 @@
 		}
 	  }
 	  if(found)
-		$.keynav.setActive(closest);
+		$.keynav.setActive(closest, true);
   }
   $.keynav.goLeft = function () {
 	  var cur = $.keynav.getCurrent();
