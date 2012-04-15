@@ -1,12 +1,8 @@
 {
+	"name": "jquery.keynav.js",
 	"source": "src",
 	"output": "lib",
-	"spec": "spec",
 	"ext": "ext",
-	"lint": {},
 	"uglify": {},
-	"hosts": {
-		"/": "spec"
-	},
 	"working": "./tmp"
 }
