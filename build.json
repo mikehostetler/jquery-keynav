@@ -3,6 +3,15 @@
 	"source": "src",
 	"output": "lib",
 	"ext": "ext",
-	"uglify": {},
-	"working": "./tmp"
+	"working": "./tmp",
+	"continuous": true,
+	"docs": {
+		"generator": "docco",
+		"output": "docs"
+	},
+	"hosts": {
+		"/"			:	"./example",
+		"/lib"	: "./lib",
+		"/docs"	: "./docs"
+	}
 }

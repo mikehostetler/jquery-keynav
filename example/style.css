@@ -1,0 +1,19 @@
+div {
+	font-family: Tahoma, Arial;
+	font-size: 10pt;
+}
+
+.keynav_box {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	background-color: green;
+	border: 1px solid black;
+}
+.keynav_focusbox {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	background-color: red;
+	border: 1px solid black;
+}

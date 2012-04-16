@@ -40,6 +40,9 @@
 			$.keynav.currentEl = e;
 		},
 
+		// Internal method to grab the currently selected element
+		// 
+		// Takes no arguments, returns a reference to the current element
 		getCurrent: function () {
 			var cur = $.keynav.el[0];
 			if($.keynav.currentEl) {
@@ -58,7 +61,7 @@
 				quad.push(el);
 			}
 			return quad;
-		}
+		},
 
 		activateClosest: function(cur,quad) {
 			var closest,

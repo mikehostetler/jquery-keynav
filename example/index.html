@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>jQuery Keynav Example</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src="../lib/jquery.keynav.js"></script>
+	<link rel="stylesheet" media="all" href="style.css" />
+</head>
+
+<body>
+  The jQuery Keyboard Navigation Plugin provides the capability for elements on a page to be navigated and activated via the keyboard's up, down, right and left arrow keys. <a href="http://plugins.jquery.com/project/keynav/">jQuery Plugins Repository Home Page</a> <!--break-->
+
+  <h2>Demo</h2>
+
+  <p>Use the arrow keys to navigate the grid and return to activate the onclick handler</p>
+
+  <p>The positions of the boxes are calculated dynamically and the keyboard controls dynamically determine which box to focus on next based on it's position on the screen.</p>
+
+	<div id="demo_box">
+	</div>
+
+	<script type="text/javascript">
+		var $demo1,$demo2,i,j,x,y;
+		$demo1 = $('<div />',{id: 'demo1'}).css({position: 'relative',height: '200px',width: '100%'});
+    for(i=0; i < 3; i++) {
+			for(j=0; j < 10; j++) {
+				$('<div />').addClass('keynav_box')
+					.click(function() { alert('foo'); })
+					.css({top: (i * 50), left: (j*50)})
+					.html(i+':'+j)
+					.appendTo($demo1);
+				//el += "<div class='keynav_box' onclick='alert(\"foo\");' style='top: ".(($i*50))."px;left: ".(($j*50))."px'>$i:$j</div>";
+                                                                        }
+    }
+
+		$demo2 = $('<div />',{id: 'demo2'}).css({position: 'relative',height: '500px',width: '100%'});
+    for(i = 0;i < 10;i++) {
+			x = Math.random() * 400;
+			y = Math.random() * 400;
+			$('<div />').addClass('keynav_box')
+				.click(function() { alert('foo'); })
+				.css({top: x, left: y})
+				.html('R:'+i)
+				.appendTo($demo2);
+    }
+		$demo1.appendTo('#demo_box');
+		$demo2.appendTo('#demo_box');
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Initialize jQuery keyboard navigation
+			$('#demo1 div').keynav('keynav_focusbox','keynav_box');
+
+			// Set the first div as the one with focus, this is optional
+			$('#demo1 div:first').removeClass().addClass('keynav_focusbox');
+
+			// Initialize jQuery keyboard navigation
+			$('#demo2 div').keynav('keynav_focusbox','keynav_box');
+
+			// Set the first div as the one with focus, this is optional
+			$('#demo2 div:first').removeClass().addClass('keynav_focusbox')
+		});
+  </script>
+</body>
+</html>
